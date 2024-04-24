@@ -23,6 +23,56 @@ Ensure Python 3.6+ is installed on your system. Install the required dependencie
 pip install numpy scikit-learn joblib torchvision
 ```
 
+## Overview of the CNN Training Script
+
+This script, `train_cnn.py`, implements a binary classification Convolutional Neural Network (CNN) using PyTorch. It is designed to handle image data, performing tasks such as image preprocessing, model training, validation, and performance evaluation. The script is configured to work with datasets organized in a directory structure suitable for `torchvision.datasets.ImageFolder`, typically used for image classification tasks.
+
+### Key Features
+
+- **Data Preprocessing**: Implements transformations including resizing, converting to grayscale, and tensor conversion.
+- **Model Definition**: A custom CNN model with two convolutional layers followed by max-pooling, flattening, and fully connected layers.
+- **Training and Validation**: Includes a training loop with loss computation, backpropagation, and optimization, along with validation to monitor overfitting.
+- **Performance Tracking**: Tracks and prints out training and validation loss for each epoch, and saves the model with the best validation performance.
+- **Visualization**: Plots training and validation loss over epochs to visualize learning progress.
+
+### Usage
+
+1. **Data Preparation**: Organize your dataset into respective 'train' and 'validation' folders, each containing subfolders for each class (e.g., 'class1', 'class2').
+
+2. **Configuration**: Set the path to your dataset in the `dataset` variable. Adjust the batch size, number of epochs, and learning rate as needed.
+
+3. **Running the Script**: Execute the script using a Python interpreter compatible with PyTorch. Ensure all dependencies are installed.
+
+### Detailed Description
+
+#### Data Loading and Transformation
+- **Transformations**:
+  - Images are resized to 64x64 pixels.
+  - Converted to grayscale.
+  - Transformed into PyTorch tensors.
+- **Dataset Split**: The dataset is split into 80% training and 20% validation.
+
+#### Model Architecture
+- **Layers**:
+  - **Conv1**: First convolutional layer with 32 filters, kernel size of 2, stride of 2.
+  - **Pool**: Max pooling layer.
+  - **Conv2**: Second convolutional layer with 64 filters, kernel size of 3, stride of 1, padding of 1.
+  - **Flatten**: Flattens the output for the dense layer.
+  - **FC1**: First fully connected layer with 512 outputs.
+  - **FC2**: Output layer with a single neuron for binary classification.
+- **Activation**: ReLU activation for hidden layers and Sigmoid for the output layer.
+
+#### Training Process
+- **Loss Function**: Binary Cross-Entropy Loss (BCELoss), suitable for binary classification tasks.
+- **Optimizer**: Adam optimizer with a learning rate of 0.001.
+- **Epochs**: Configurable number of training epochs.
+- **Validation**: Computes validation loss to monitor model performance and avoid overfitting.
+
+#### Output
+- **Model Saving**: The model with the lowest validation loss is saved for future use.
+- **Plotting**: Generates a plot showing training and validation loss over epochs to help visualize the model's learning curve.
+
+
 ## Running the Scripts
 
 1. **Training the Model**
