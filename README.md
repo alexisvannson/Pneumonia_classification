@@ -73,6 +73,37 @@ This script, `train_cnn.py`, implements a binary classification Convolutional Ne
 - **Plotting**: Generates a plot showing training and validation loss over epochs to help visualize the model's learning curve.
 
 
+## Implementation of RandomForest 
+
+This script, `forest.py`, is designed to classify images using a RandomForest Classifier from the scikit-learn library. The primary application demonstrated in this script is for the classification of pneumonia from chest X-ray images. The script includes processes for image data loading, preprocessing, feature extraction, model training, validation, and evaluation.
+
+### Detailed Script Description
+  - The training-validation set is further split to separate training and validation data.
+
+#### RandomForest Model
+- **Initialization**:
+  - A RandomForest Classifier is initialized with 100 trees and a fixed random state for reproducibility.
+
+- **Training**:
+  - The model is trained on the training dataset using pixel values as features.
+
+- **Validation and Evaluation**:
+  - The model's performance is evaluated on the validation set using accuracy and ROC-AUC as metrics.
+  - Results are printed to provide immediate feedback on performance.
+
+- **Model Saving**:
+  - The trained model is saved using joblib for easy reloading and deployment in different environments.
+  - 
+### Output
+- The script prints the model's validation accuracy and ROC-AUC score and saves the RandomForest model to a file named `random_forest_model.joblib`.
+
+### Example Output
+```plaintext
+Model saved successfully!
+Validation Accuracy: 0.9500
+Validation ROC-AUC: 0.9875
+```
+
 ## Running the Scripts
 
 1. **Training the Model**
@@ -98,11 +129,3 @@ This script, `train_cnn.py`, implements a binary classification Convolutional Ne
    ```bash
    python trial.py
    ```
-
-## Contributing
-
-We welcome contributions to improve the models or extend the project's functionality. Feel free to fork the repository, make your changes, and submit a pull request.
-
-## License
-
-This project is released under the MIT License. For more details, see the LICENSE file in the repository.
