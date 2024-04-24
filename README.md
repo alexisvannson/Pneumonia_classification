@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is focused on the classification of pneumonia from chest X-ray images, leveraging a dataset available on Kaggle. It showcases two different model implementations for this task: a RandomForest classifier from scikit-learn and a Convolutional Neural Network (CNN) approach, providing a comparative insight into machine learning and deep learning techniques for medical image analysis.
+This project is focused on the classification of pneumonia from chest X-ray images, leveraging a dataset available on Kaggle(https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia). It showcases two different model implementations for this task: a RandomForest classifier from scikit-learn and a Convolutional Neural Network (CNN) approach, providing a comparative insight into machine learning and deep learning techniques for medical image analysis.
 
 ## Project Structure
 
