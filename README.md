@@ -13,7 +13,8 @@ This project is focused on the classification of pneumonia from chest X-ray imag
 
 ## Dataset
 
-The dataset used in this project is the pneumonia dataset from Kaggle, which includes chest X-ray images labeled as either 'Pneumonia' or 'Normal'. This dataset is instrumental in training the models to differentiate between healthy and pneumonia-affected lung X-rays.
+The training and validation dataset used in this project is the pneumonia dataset from Kaggle, which includes chest X-ray images labeled as either 'Pneumonia' or 'Normal'. In the 'Normal' folder, it contains vegetable images as well other than just healthy lung images. Whereas in the 'Pneumonia' folder there is only images of pneumonia patient lungs. The testing dataset has the same strucutre. This dataset is instrumental in training the models to differentiate between healthy and pneumonia-affected lung X-rays.
+
 
 ## Setup
 

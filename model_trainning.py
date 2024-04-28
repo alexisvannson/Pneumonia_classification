@@ -16,7 +16,7 @@ transform = transforms.Compose([
 ])
 
 # Load the dataset from the file system
-dataset = datasets.ImageFolder(root='/Users/philippevannson/Desktop/cancer2/train', transform=transform)
+dataset = datasets.ImageFolder(root='dataset', transform=transform)
 
 # Optionally, split the dataset into training and validation sets
 train_size = int(0.8 * len(dataset))

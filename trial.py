@@ -35,14 +35,14 @@ image_transform = transforms.Compose([
     #transforms.Normalize(mean=[0.485], std=[0.229])  # #normalized_pixel = (pixel−mean)/std
 ])
 
-dataset = datasets.ImageFolder(root='/Users/philippevannson/Downloads/chest_xray_2/chest_xray', transform=image_transform)
+dataset = datasets.ImageFolder(root='testing set', transform=image_transform)
 # Assuming `dataset` is already created with ImageFolder and appropriate transforms
 data_loader = DataLoader(dataset, batch_size=32, shuffle=True)  # Adjust batch size according to your system's capability
 
 
 # Load the saved model
 model = BinaryClassifierCNN() # model initialization
-model.load_state_dict(torch.load('./final_model.pth')) # take already prepared weights, final_model.pth, Best_model.pth
+model.load_state_dict(torch.load('Best_model.pth')) # take already prepared weights, final_model.pth, Best_model.pth
 model.eval()  # Set the model to evaluation mode
 """
 # Load and preprocess the image
